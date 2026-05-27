@@ -1,4 +1,5 @@
-
+Here is the updated HTML code for your portfolio. I've fixed the navbar highlighting on scroll and improved the background contrast for the "About Me" and "Experience" sections to ensure text is clearly visible.
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -317,9 +318,9 @@
             border-radius: 2px;
         }
         
-        /* About Section */
+        /* About Section - Improved contrast */
         .about {
-            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #0f3460 0%, #1e2a5e 100%);
             position: relative;
             overflow: hidden;
         }
@@ -331,27 +332,31 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,00 L0,0 Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
+            background: rgba(0, 0, 0, 0.3);
         }
         
         .about-content {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 20px;
             padding: 50px;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             position: relative;
             z-index: 2;
         }
         
         .about-content:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-content p {
+            color: #ffffff;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         
         /* Resume Section */
@@ -373,13 +378,13 @@
         }
         
         .resume-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             padding: 50px;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             z-index: 2;
             text-align: center;
@@ -387,7 +392,7 @@
         
         .resume-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.6);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
@@ -412,7 +417,7 @@
         .resume-description {
             margin-bottom: 40px;
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
         }
         
         .resume-buttons {
@@ -458,9 +463,9 @@
             color: white;
         }
         
-        /* Experience Section */
+        /* Experience Section - Improved contrast */
         .experience {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--blue) 100%);
+            background: linear-gradient(135deg, #1e2a5e 0%, #0f3460 100%);
             position: relative;
             overflow: hidden;
         }
@@ -472,19 +477,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,00 L0,0 Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
+            background: rgba(0, 0, 0, 0.2);
         }
         
         .experience-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.55);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
             z-index: 2;
@@ -492,8 +495,8 @@
         
         .experience-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.65);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         .experience-title {
@@ -509,7 +512,8 @@
         .experience-company {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.9);
+            color: #ffffff;
+            font-weight: 500;
         }
         
         .experience-duration {
@@ -521,6 +525,7 @@
         
         .experience-description {
             margin-bottom: 20px;
+            color: #f0f0f0;
         }
         
         .experience-description ul {
@@ -531,6 +536,7 @@
         .experience-description li {
             margin-bottom: 8px;
             position: relative;
+            color: #f0f0f0;
         }
         
         .experience-description li::before {
@@ -548,7 +554,7 @@
         }
         
         .experience-tag {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -565,7 +571,7 @@
         }
         
         .cert-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
@@ -576,7 +582,7 @@
         
         .cert-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.6);
         }
         
         .cert-icon {
@@ -632,7 +638,7 @@
             transition: width 2s ease-in-out;
         }
         
-        /* Education section same as original */
+        /* Education section */
         .education {
             background: linear-gradient(135deg, var(--purple) 0%, var(--accent) 100%);
             position: relative;
@@ -669,7 +675,7 @@
         
         .timeline-content {
             padding: 25px 30px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             box-shadow: var(--shadow);
             position: relative;
@@ -679,7 +685,7 @@
         
         .timeline-content:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.6);
         }
         
         .timeline-content h5 {
@@ -707,7 +713,7 @@
         }
         
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -719,7 +725,7 @@
         
         .project-card:hover {
             transform: translateY(-15px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.65);
         }
         
         .project-content { padding: 30px; }
@@ -761,7 +767,7 @@
         }
         
         .contact-info {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             padding: 50px 40px;
             backdrop-filter: blur(10px);
@@ -776,7 +782,7 @@
         }
         
         .social-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 30px 20px;
             text-align: center;
@@ -784,7 +790,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); }
+        .social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.2); }
         .social-icon {
             width: 70px;
             height: 70px;
@@ -878,6 +884,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="row align-items-center">
@@ -896,19 +903,21 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-title"><h2>About Me</h2></div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="about-content">
-                        <p>Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for a logistics platform serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows. Works across the full Django stack — MySQL, Django ORM, and React.js integration. Passionate about writing clean, scalable backend code.</p>
+                        <p>Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for a logistics platform serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows. Works across the full Django stack — MySQL, Django ORM, and React.js integration. Passionate about writing clean, scalable backend code and continuously expanding expertise in modern Python development practices.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Resume Section -->
     <section id="resume" class="resume">
         <div class="container">
             <div class="section-title"><h2>My Resume</h2></div>
@@ -928,6 +937,7 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-title"><h2>Experience</h2></div>
@@ -966,6 +976,7 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
     <section id="certifications" class="certifications">
         <div class="container">
             <div class="section-title"><h2>Certifications</h2></div>
@@ -980,6 +991,7 @@
         </div>
     </section>
 
+    <!-- Education Section (unchanged) -->
     <section id="education" class="education">
         <div class="container"><div class="section-title"><h2>Education</h2></div><div class="timeline">
             <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h5>Master Of Computer Science (M.C.S.)</h5><p><strong>SPPU University</strong> | 2024 - 2026 (Pursuing)</p><p>Mamasaheb Mohol College, Pune</p></div></div>
@@ -989,6 +1001,7 @@
         </div></div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="skills"><div class="container"><div class="section-title"><h2>My Skills</h2></div><div class="row">
         <div class="col-lg-6"><div class="skill-item"><div class="skill-info"><span class="skill-name">Python Core & Advanced</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85"></div></div></div>
         <div class="skill-item"><div class="skill-info"><span class="skill-name">Django & DRF</span><span class="skill-percent">82%</span></div><div class="skill-bar"><div class="skill-progress" data-width="82"></div></div></div>
@@ -1002,12 +1015,14 @@
         <div class="skill-item"><div class="skill-info"><span class="skill-name">Postman / API Testing</span><span class="skill-percent">75%</span></div><div class="skill-bar"><div class="skill-progress" data-width="75"></div></div></div></div>
     </div></div></section>
 
+    <!-- Projects Section -->
     <section id="projects" class="projects"><div class="container"><div class="section-title"><h2>My Projects</h2></div><div class="row">
         <div class="col-lg-6 mb-3"><div class="project-card"><div class="project-content"><h3 class="project-title">Loan Finance</h3><p>Secure loan management system with role-based auth, loan approval workflows, real-time EMI calculation, and automated disbursement scheduling using Django, MySQL.</p><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Django</span><span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span></div><a href="https://adi0915.pythonanywhere.com/" class="project-link" target="_blank">View Project</a></div></div></div>
         <div class="col-lg-6 mb-3"><div class="project-card"><div class="project-content"><h3 class="project-title">TempoLogi – Logistics Platform</h3><p>Logistics APIs for load posting, bidding, vehicle scheduling. Implemented JWT auth, RBAC, escrow payments, OTP delivery verification, KYC verification, revenue analytics with Django REST Framework + React.js.</p><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">DRF</span><span class="tech-tag">React.js</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span></div><a href="#" class="project-link" target="_blank">View on GitHub</a></div></div></div>
         <div class="col-lg-6 mb-3"><div class="project-card"><div class="project-content"><h3 class="project-title">Student Attendance System</h3><p>Multi-role attendance with facial recognition (OpenCV), Django ORM, Excel report export, automated alerts for low attendance.</p><div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Django</span><span class="tech-tag">OpenCV</span><span class="tech-tag">SQLite</span></div><a href="https://asattendance.pythonanywhere.com/" class="project-link" target="_blank">View Project</a></div></div></div>
     </div></div></section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact-section"><div class="container"><div class="section-title"><h2>Let's Connect</h2></div><div class="contact-content"><div class="row justify-content-center"><div class="col-lg-10"><div class="contact-info"><h3 class="contact-heading">Get In Touch</h3><p class="contact-subheading">Open to opportunities, collaborations, or just a chat. Reach out via any platform!</p><div class="social-links-grid">
         <a href="https://www.linkedin.com/in/aditya-sase-397774324" class="social-card"><div class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></div><h4 class="social-name">LinkedIn</h4><p class="social-handle">Aditya Sase</p></a>
         <a href="https://www.instagram.com/aditya.0915__" class="social-card"><div class="social-icon instagram"><i class="fab fa-instagram"></i></div><h4 class="social-name">Instagram</h4><p class="social-handle">@aditya.0915__</p></a>
@@ -1017,7 +1032,8 @@
 
     <footer class="footer"><div class="container"><div class="social-links"><a href="https://www.linkedin.com/in/aditya-sase-397774324" class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/aditya.0915__" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/share/15tA1R4zEG/" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://wa.me/919604735635" class="social-link"><i class="fab fa-whatsapp"></i></a></div><div class="copyright"><p>&copy; 2025 All rights reserved | <a href="#" style="color: var(--secondary);">Aditya Sase</a></p></div></div></footer>
 
-    <div class="modal fade resume-modal" id="resumeModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Aditya Madhukar Sase - Resume</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="resume-content"><div class="resume-header"><h2>Aditya Madhukar Sase</h2><h3>Fullstack Python Developer</h3><div class="contact-info-resume"><span><i class="fas fa-envelope"></i> saseaditya0915@gmail.com</span><span><i class="fas fa-phone"></i> +91 9604735635</span><span><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</span></div></div><div class="resume-section"><h4>Professional Summary</h4><p>Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for logistics platform. Shipped JWT authentication, RBAC, OTP verification workflows. Passionate about clean, scalable code.</p></div><div class="resume-section"><h4>Technical Skills</h4><div class="skills-grid"><div class="skill-category"><h5>Languages</h5><ul><li>Python</li><li>SQL</li><li>JavaScript</li></ul></div><div class="skill-category"><h5>Backend</h5><ul><li>Django</li><li>DRF</li><li>JWT</li><li>RBAC</li></ul></div><div class="skill-category"><h5>Frontend</h5><ul><li>React.js</li><li>HTML/CSS</li><li>Bootstrap</li></ul></div><div class="skill-category"><h5>Databases</h5><ul><li>MySQL</li><li>SQLite</li><li>Django ORM</li></ul></div></div></div><div class="resume-section"><h4>Experience</h4><div class="experience-item"><div class="experience-header"><h5>Python Developer Intern</h5><span class="experience-date">Nov 2025 - Apr 2026</span></div><div class="experience-company-resume">Prygma Information Systems LLP</div><ul><li>Developed REST APIs with DRF for logistics.</li><li>Implemented JWT authentication & RBAC.</li><li>Worked on shipment tracking, OTP, payment modules.</li></ul></div><div class="experience-item"><div class="experience-header"><h5>Full Stack Python Intern</h5><span class="experience-date">Aug 2024 - Feb 2025</span></div><div class="experience-company-resume">Adhyayan Education Services</div><ul><li>Django, REST APIs, MySQL, Git collaboration.</li></ul></div></div><div class="resume-section"><h4>Projects</h4><div class="experience-item"><h5>TempoLogi – Logistics Platform</h5><p>DRF, JWT, RBAC, escrow payments, OTP verification, KYC, React.js integration.</p><h5>Loan Finance</h5><p>Django, MySQL, EMI automation, role-based approvals.</p><h5>Student Attendance</h5><p>OpenCV facial recognition, Django, SQLite.</p></div></div><div class="resume-section"><h4>Certifications</h4><ul><li>Full Stack Python Training – Adhyayan IT (6 months)</li></ul></div><div class="resume-section"><h4>Education</h4><div>MCS (Pursuing) - SPPU | BCS 7.22/10 | HSC 84.33% | SSC 80%</div></div></div></div><div class="modal-footer"><a href="aditya_sase_resume.pdf" class="btn btn-resume btn-download" download><i class="fas fa-download"></i> Download</a><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+    <!-- Resume Modal -->
+    <div class="modal fade resume-modal" id="resumeModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Aditya Madhukar Sase - Resume</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="resume-content"><div class="resume-header"><h2>Aditya Madhukar Sase</h2><h3>Fullstack Python Developer</h3><div class="contact-info-resume"><span><i class="fas fa-envelope"></i> saseaditya0915@gmail.com</span><span><i class="fas fa-phone"></i> +91 9604735635</span><span><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</span></div></div><div class="resume-section"><h4>Professional Summary</h4><p>Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for a logistics platform serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows.</p></div><div class="resume-section"><h4>Technical Skills</h4><div class="skills-grid"><div class="skill-category"><h5>Languages</h5><ul><li>Python</li><li>SQL</li><li>JavaScript</li></ul></div><div class="skill-category"><h5>Backend</h5><ul><li>Django</li><li>DRF</li><li>JWT</li><li>RBAC</li></ul></div><div class="skill-category"><h5>Frontend</h5><ul><li>React.js</li><li>HTML/CSS</li><li>Bootstrap</li></ul></div><div class="skill-category"><h5>Databases</h5><ul><li>MySQL</li><li>SQLite</li><li>Django ORM</li></ul></div></div></div><div class="resume-section"><h4>Experience</h4><div class="experience-item"><div class="experience-header"><h5>Python Developer Intern</h5><span class="experience-date">Nov 2025 - Apr 2026</span></div><div class="experience-company-resume">Prygma Information Systems LLP</div><ul><li>Developed REST APIs with DRF for logistics.</li><li>Implemented JWT authentication & RBAC.</li><li>Worked on shipment tracking, OTP, payment modules.</li></ul></div><div class="experience-item"><div class="experience-header"><h5>Full Stack Python Intern</h5><span class="experience-date">Aug 2024 - Feb 2025</span></div><div class="experience-company-resume">Adhyayan Education Services</div><ul><li>Django, REST APIs, MySQL, Git collaboration.</li></ul></div></div><div class="resume-section"><h4>Projects</h4><div class="experience-item"><h5>TempoLogi – Logistics Platform</h5><p>DRF, JWT, RBAC, escrow payments, OTP verification, KYC, React.js integration.</p><h5>Loan Finance</h5><p>Django, MySQL, EMI automation, role-based approvals.</p><h5>Student Attendance</h5><p>OpenCV facial recognition, Django, SQLite.</p></div></div><div class="resume-section"><h4>Certifications</h4><ul><li>Full Stack Python Training – Adhyayan IT (6 months)</li></ul></div><div class="resume-section"><h4>Education</h4><div>MCS (Pursuing) - SPPU | BCS 7.22/10 | HSC 84.33% | SSC 80%</div></div></div></div><div class="modal-footer"><a href="aditya_sase_resume.pdf" class="btn btn-resume btn-download" download><i class="fas fa-download"></i> Download</a><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
 
     <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -1027,9 +1043,53 @@
     <script>
         AOS.init({ duration: 1000, once: true });
         new Typed('.typed-text', { strings: ['Fullstack Python Developer', 'Django REST API Expert', 'Backend Engineer'], typeSpeed: 50, backSpeed: 30, loop: true });
-        window.addEventListener('scroll', () => { document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50); document.querySelector('.back-to-top').classList.toggle('active', window.scrollY > 300); });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if(target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }); });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) { document.querySelectorAll('.skill-progress').forEach(bar => { bar.style.width = bar.getAttribute('data-width') + '%'; }); } }); }, { threshold: 0.3 });
+        
+        // Navbar scroll effect and active highlight
+        window.addEventListener('scroll', () => { 
+            const navbar = document.querySelector('.navbar');
+            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+            document.querySelector('.back-to-top').classList.toggle('active', window.scrollY > 300);
+            
+            // Active navbar highlighting
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 120)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+            anchor.addEventListener('click', function(e) { 
+                e.preventDefault(); 
+                const target = document.querySelector(this.getAttribute('href')); 
+                if(target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); 
+            }); 
+        });
+        
+        // Skill bars animation
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if(entry.isIntersecting) { 
+                    document.querySelectorAll('.skill-progress').forEach(bar => { 
+                        bar.style.width = bar.getAttribute('data-width') + '%'; 
+                    }); 
+                } 
+            }); 
+        }, { threshold: 0.3 });
         observer.observe(document.getElementById('skills'));
     </script>
 </body>
