@@ -1,17 +1,17 @@
-Here is the complete HTML document with the requested features: a glowing animated navbar highlight, a modal popup for your resume with view/download options, and a sleek, modern design.
+Here is the updated HTML code with the navbar auto-highlight, smooth click navigation, and a resume modal popup with view and download functionality.
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Aditya Sase | Fullstack Python Developer | Premium Portfolio</title>
+  <title>Aditya Sase | Fullstack Python Developer | Premium Dynamic Portfolio</title>
   
   <!-- Google Fonts + Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 (Grid + Utilities + JS for Modal) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <!-- AOS Library -->
@@ -32,7 +32,7 @@ Here is the complete HTML document with the requested features: a glowing animat
       scroll-behavior: smooth;
     }
 
-    /* DYNAMIC ANIMATED BACKGROUND (LIGHTING & MOVEMENT) */
+    /* ========== DYNAMIC ANIMATED BACKGROUND (LIGHTING & MOVEMENT) ========== */
     .dynamic-bg {
       position: fixed;
       top: 0;
@@ -79,11 +79,12 @@ Here is the complete HTML document with the requested features: a glowing animat
       100% { background-position: 80px 80px, 120px 120px; }
     }
 
+    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0f0f1f; }
     ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 12px; }
     
-    /* GLASS & CARDS */
+    /* ========== GLASS & CARDS (NEVER MERGE) ========== */
     .glass-card {
       background: rgba(15, 23, 42, 0.65);
       backdrop-filter: blur(12px);
@@ -99,7 +100,7 @@ Here is the complete HTML document with the requested features: a glowing animat
       background: rgba(20, 30, 55, 0.8);
     }
     
-    /* NAVBAR WITH GLOWING ACTIVE/HOVER */
+    /* Navbar Premium */
     .navbar-premium {
       background: rgba(5, 5, 18, 0.85);
       backdrop-filter: blur(16px);
@@ -117,29 +118,25 @@ Here is the complete HTML document with the requested features: a glowing animat
       transition: 0.2s;
       position: relative;
       margin: 0 0.3rem;
-      border-radius: 30px;
-      padding: 0.5rem 1rem;
+      cursor: pointer;
     }
     .nav-link-custom:hover, .nav-link-custom.active {
       color: white;
-      text-shadow: 0 0 8px #3b82f6;
-      background: rgba(59,130,246,0.15);
-      box-shadow: 0 0 12px rgba(59,130,246,0.4);
+      text-shadow: 0 0 6px #3b82f6;
     }
     .nav-link-custom::after {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 50%;
+      bottom: -6px;
+      left: 0;
       width: 0%;
       height: 2px;
       background: linear-gradient(90deg, #60a5fa, #c084fc);
       transition: 0.3s;
-      transform: translateX(-50%);
     }
-    .nav-link-custom:hover::after, .nav-link-custom.active::after { width: 70%; }
+    .nav-link-custom:hover::after, .nav-link-custom.active::after { width: 100%; }
     
-    /* Hero Section */
+    /* Hero & Animations */
     .hero-section {
       min-height: 100vh;
       display: flex;
@@ -189,6 +186,7 @@ Here is the complete HTML document with the requested features: a glowing animat
       border-color: transparent;
     }
     
+    /* Section Spacing & Title */
     .section-padding {
       padding: 110px 0 100px;
     }
@@ -210,6 +208,7 @@ Here is the complete HTML document with the requested features: a glowing animat
       border-radius: 3px;
     }
     
+    /* Skill bar */
     .skill-bar-bg {
       background: #1e293b;
       border-radius: 40px;
@@ -235,7 +234,7 @@ Here is the complete HTML document with the requested features: a glowing animat
       border: 0.5px solid rgba(96,165,250,0.4);
     }
     
-    /* Timeline */
+    /* TIMELINE (EDUCATION) WITH DISTINCT SEPARATION */
     .timeline-modern {
       position: relative;
       padding-left: 28px;
@@ -261,9 +260,16 @@ Here is the complete HTML document with the requested features: a glowing animat
       box-shadow: 0 0 12px #60a5fa;
       border: 2px solid white;
     }
-    .edu-item { margin-bottom: 2rem; }
-    .project-card { height: 100%; }
+    .edu-item {
+      margin-bottom: 2rem;
+    }
     
+    /* Project spacing */
+    .project-card {
+      height: 100%;
+    }
+    
+    /* Contact social cards */
     .social-premium {
       background: rgba(12, 20, 35, 0.7);
       border-radius: 24px;
@@ -296,53 +302,54 @@ Here is the complete HTML document with the requested features: a glowing animat
       color: white;
     }
     .back-to-top.visible { opacity: 1; }
-    hr.divider-light { background: rgba(96,165,250,0.2); height: 1px; margin: 2rem 0; }
     
-    /* RESUME MODAL - GLOWING & ELEGANT */
+    hr.divider-light {
+      background: rgba(96,165,250,0.2);
+      height: 1px;
+      margin: 2rem 0;
+    }
+    
+    /* Resume Modal Styling */
     .resume-modal .modal-content {
-      background: rgba(10, 15, 30, 0.95);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(96,165,250,0.5);
+      background: linear-gradient(135deg, #0f172a, #0a0a1a);
+      border: 1px solid rgba(59,130,246,0.4);
       border-radius: 28px;
-      box-shadow: 0 0 40px rgba(59,130,246,0.3);
-      color: #f0f3fa;
+      color: #e2e8f0;
     }
     .resume-modal .modal-header {
-      border-bottom: 1px solid rgba(96,165,250,0.3);
-      background: transparent;
+      border-bottom: 1px solid rgba(59,130,246,0.3);
+      background: rgba(5,5,18,0.9);
+      border-radius: 28px 28px 0 0;
     }
     .resume-modal .btn-close {
       filter: invert(1);
-      opacity: 0.8;
     }
-    .resume-content-inner {
+    .resume-content {
       max-height: 70vh;
       overflow-y: auto;
-      padding-right: 8px;
+      padding: 1rem;
     }
-    .resume-content-inner::-webkit-scrollbar { width: 4px; }
-    .resume-section h5 {
-      color: #60a5fa;
-      border-left: 3px solid #60a5fa;
-      padding-left: 12px;
-      margin-top: 1rem;
+    .resume-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 1.2rem 0 0.8rem 0;
+      border-bottom: 1px solid rgba(96,165,250,0.3);
+      display: inline-block;
     }
-    .resume-skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+    .resume-text {
+      color: #cbd5e1;
     }
-    .resume-badge {
+    .skill-badge-resume {
       background: rgba(59,130,246,0.2);
       border-radius: 30px;
-      padding: 4px 14px;
+      padding: 4px 12px;
       font-size: 0.8rem;
-    }
-    .btn-resume-download {
-      background: linear-gradient(95deg, #2563eb, #4f46e5);
-      border: none;
-      box-shadow: 0 0 15px #3b82f6;
+      display: inline-block;
+      margin: 4px;
     }
     
     @media (max-width: 768px) {
@@ -355,6 +362,7 @@ Here is the complete HTML document with the requested features: a glowing animat
 </head>
 <body>
 
+<!-- LAYERED ANIMATED BACKGROUND (LIGHT & MOTION) -->
 <div class="dynamic-bg"></div>
 <div class="light-particles"></div>
 
@@ -367,34 +375,33 @@ Here is the complete HTML document with the requested features: a glowing animat
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="#contact">Connect</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="about">About</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="education">Education</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" data-nav="contact">Connect</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO with Resume Button -->
+<!-- HERO SECTION -->
 <section id="home" class="hero-section">
   <div class="container">
     <div class="row align-items-center g-5">
-      <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right">
+      <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right" data-aos-duration="1000">
         <div class="d-inline-block mb-3 px-3 py-1 rounded-pill" style="background: rgba(59,130,246,0.15); backdrop-filter: blur(6px);"><i class="fa-regular fa-star-of-life text-primary me-1"></i> Fullstack Python Developer</div>
         <h1 class="hero-title">Aditya Sase</h1>
-        <div class="fs-3 fw-medium mb-3"><span style="text-shadow: 0 0 10px #3b82f6;">Python Backend Engineer</span></div>
-        <p class="opacity-75 mb-4">Production-grade REST APIs • Django • DRF • JWT • RBAC • 6 months internship building logistics platforms.</p>
+        <div class="fs-3 fw-medium mb-3"><span class="glow-text" style="text-shadow: 0 0 10px #3b82f6;">Python Developer</span></div>
+        <p class="opacity-75 mb-4">Production-grade REST APIs • Django • DRF • JWT • RBAC • 6 months internship building logistics platform with multiple user roles.</p>
         <div class="d-flex gap-3 flex-wrap">
           <a href="#contact" class="btn btn-glow"><i class="fas fa-paper-plane me-2"></i>Collaborate</a>
-          <!-- RESUME BUTTON OPENS MODAL -->
-          <button class="btn btn-outline-light rounded-pill px-4 py-2" data-bs-toggle="modal" data-bs-target="#resumeModal"><i class="fas fa-file-alt me-1"></i> View Resume</button>
+          <button class="btn btn-outline-light rounded-pill px-4 py-2" data-bs-toggle="modal" data-bs-target="#resumeModal"><i class="fas fa-eye me-1"></i> View Resume</button>
         </div>
       </div>
-      <div class="col-lg-6 order-lg-2 order-1 text-center" data-aos="fade-left">
+      <div class="col-lg-6 order-lg-2 order-1 text-center" data-aos="fade-left" data-aos-duration="1000">
         <div class="profile-img-wrapper">
           <img src="profie.jpg" alt="Aditya Sase" onerror="this.src='https://placehold.co/400x400/1e293b/60a5fa?text=Aditya+Sase'">
         </div>
@@ -403,49 +410,167 @@ Here is the complete HTML document with the requested features: a glowing animat
   </div>
 </section>
 
-<!-- About, Experience, Skills, Education, Projects Sections (kept clean) -->
+<!-- ABOUT SECTION -->
 <section id="about" class="section-padding">
-  <div class="container"><div class="row justify-content-center"><div class="col-lg-10" data-aos="fade-up"><h2 class="section-title">About Me</h2><div class="glass-card p-4 p-md-5"><p class="lead fw-light">Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF. Shipped JWT authentication, RBAC, OTP workflows. Full Django stack — MySQL, Django ORM, and React.js integration.</p><hr class="divider-light"><div class="row mt-3"><div class="col-md-6"><i class="fas fa-map-marker-alt text-primary me-2"></i> Pune, Maharashtra</div><div class="col-md-6"><i class="fas fa-envelope text-primary me-2"></i> saseaditya0915@gmail.com</div></div></div></div></div></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10" data-aos="fade-up">
+        <h2 class="section-title">About Me</h2>
+        <div class="glass-card p-4 p-md-5">
+          <p class="lead fw-light">Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for a logistics platform serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows. Works across the full Django stack — MySQL, Django ORM, and React.js integration.</p>
+          <hr class="divider-light">
+          <div class="row mt-3">
+            <div class="col-md-6"><i class="fas fa-map-marker-alt text-primary me-2"></i> Pune, Maharashtra</div>
+            <div class="col-md-6"><i class="fas fa-envelope text-primary me-2"></i> saseaditya0915@gmail.com</div>
+            <div class="col-md-6 mt-2"><i class="fab fa-linkedin text-primary me-2"></i> linkedin.com/in/aditya-sase</div>
+            <div class="col-md-6 mt-2"><i class="fab fa-github text-primary me-2"></i> github.com/adityasase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="experience" class="section-padding" style="background: rgba(0,0,0,0.2);"><div class="container"><div data-aos="fade-up"><h2 class="section-title">Work Experience</h2></div><div class="row g-4"><div class="col-lg-12" data-aos="fade-right"><div class="glass-card p-4"><div class="d-flex flex-wrap justify-content-between"><div><h3 class="fw-bold">Python Developer Intern</h3><p class="text-primary mb-1">Prygma Information Systems LLP, Ahilyanagar</p></div><span class="badge bg-dark px-3 py-2 rounded-pill">Nov 2025 – Apr 2026</span></div><ul class="mt-3 list-unstyled"><li><i class="fas fa-check-circle text-primary me-2"></i> Built REST APIs with DRF, JWT auth & RBAC for logistics.</li><li><i class="fas fa-check-circle text-primary me-2"></i> Shipment tracking, OTP verification, payment workflows.</li></ul><div><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span></div></div></div></div></div></section>
+<!-- EXPERIENCE -->
+<section id="experience" class="section-padding" style="background: rgba(0,0,0,0.2);">
+  <div class="container">
+    <div data-aos="fade-up"><h2 class="section-title">Work Experience</h2></div>
+    <div class="row g-4">
+      <div class="col-lg-12" data-aos="fade-right">
+        <div class="glass-card p-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-start">
+            <div><h3 class="fw-bold">Python Developer Intern</h3><p class="text-primary mb-1">Prygma Information Systems LLP, Ahilyanagar</p></div>
+            <span class="badge bg-dark px-3 py-2 rounded-pill">Nov 2025 – Apr 2026 | 6 Months</span>
+          </div>
+          <ul class="mt-3 list-unstyled">
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> REST APIs using Django REST Framework for logistics.</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> JWT authentication + RBAC for multiple user roles.</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Shipment tracking, OTP verification, payment modules.</li>
+          </ul>
+          <div class="d-flex flex-wrap"><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="skills" class="section-padding"><div class="container"><div class="row g-5"><div class="col-lg-6" data-aos="fade-right"><h2 class="section-title">Technical Skills</h2><div class="glass-card p-4"><div class="skill-item"><div class="d-flex justify-content-between"><span>Django / DRF</span><span>88%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="88"></div></div></div><div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Python</span><span>90%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="90"></div></div></div><div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>MySQL</span><span>82%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="82"></div></div></div></div></div><div class="col-lg-6" data-aos="fade-left"><h2 class="section-title">Certifications</h2><div class="glass-card p-4"><i class="fas fa-certificate fa-2x text-primary"></i><p class="mt-2"><strong>Full Stack Python Training</strong> – Adhyayan IT, Pune (6 Months)</p><i class="fas fa-laptop-code fa-2x text-primary mt-3"></i><p class="mt-2"><strong>Django REST Framework Specialization</strong></p></div></div></div></div></section>
+<!-- SKILLS & CERTIFICATIONS (shortened for brevity but includes key data) -->
+<section id="skills" class="section-padding">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="glass-card p-4">
+          <div class="mb-3"><span class="fw-bold">Languages</span><div class="mt-2"><span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">JavaScript</span></div></div>
+          <div class="mb-3"><span class="fw-bold">Frameworks</span><div class="mt-2"><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">React.js</span></div></div>
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Django / DRF</span><span>88%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="88"></div></div></div>
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Python Core</span><span>90%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="90"></div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 class="section-title">Certifications</h2>
+        <div class="glass-card p-4">
+          <i class="fas fa-certificate text-primary me-2"></i> Full Stack Python Training (Adhyayan IT) - 6 Months
+          <hr class="divider-light">
+          <i class="fas fa-laptop-code text-primary me-2"></i> Django REST Framework Specialization
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="education" class="section-padding" style="background: rgba(0,0,0,0.2);"><div class="container"><div data-aos="fade-up"><h2 class="section-title">Education</h2></div><div class="row"><div class="col-lg-10 mx-auto"><div class="glass-card p-4 p-md-5"><div class="timeline-modern"><div class="edu-item position-relative"><div class="timeline-dot-modern"></div><div class="ms-4"><h4 class="fw-bold">Master of Computer Science (MCS)</h4><p class="text-primary">SPPU, Pune | 2024 – 2026</p></div></div><div class="edu-item position-relative"><div class="timeline-dot-modern"></div><div class="ms-4"><h4 class="fw-bold">Bachelor of Computer Science</h4><p class="text-primary">SPPU | CGPA: 7.22 | 2021-2024</p></div></div></div></div></div></div></div></section>
+<!-- EDUCATION -->
+<section id="education" class="section-padding" style="background: rgba(0,0,0,0.2);">
+  <div class="container">
+    <div data-aos="fade-up"><h2 class="section-title">Education Timeline</h2></div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="glass-card p-4 p-md-5">
+          <div class="timeline-modern">
+            <div class="edu-item position-relative"><div class="timeline-dot-modern"></div><div class="ms-4"><h4>Master of Computer Science (MCS)</h4><p>SPPU University | 2024 – 2026 Pursuing</p></div></div>
+            <div class="edu-item position-relative"><div class="timeline-dot-modern"></div><div class="ms-4"><h4>Bachelor of Computer Science (BCS)</h4><p>SPPU University | CGPA 7.22 | 2021-2024</p></div></div>
+            <div class="edu-item position-relative"><div class="timeline-dot-modern"></div><div class="ms-4"><h4>HSC | 84.33%</h4><p>Maharashtra State Board</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="projects" class="section-padding"><div class="container"><div data-aos="fade-up"><h2 class="section-title">Projects</h2></div><div class="row g-4"><div class="col-md-6"><div class="glass-card project-card p-4"><i class="fas fa-chart-line fa-2x text-primary"></i><h3 class="fw-bold mt-2">Loan Finance App</h3><p>Django, MySQL, EMI automation</p></div></div><div class="col-md-6"><div class="glass-card project-card p-4"><i class="fas fa-truck-fast fa-2x text-primary"></i><h3 class="fw-bold mt-2">TempoLogi Logistics</h3><p>DRF + React, JWT, escrow payments</p></div></div></div></div></section>
+<!-- PROJECTS SECTION (simplified) -->
+<section id="projects" class="section-padding">
+  <div class="container">
+    <div data-aos="fade-up"><h2 class="section-title">Projects</h2></div>
+    <div class="row g-4">
+      <div class="col-md-6"><div class="glass-card p-4"><i class="fas fa-chart-line fa-2x text-primary"></i><h3 class="mt-2">Loan Finance App</h3><p>Django, MySQL, EMI automation</p></div></div>
+      <div class="col-md-6"><div class="glass-card p-4"><i class="fas fa-truck-fast fa-2x text-primary"></i><h3 class="mt-2">TempoLogi</h3><p>Logistics API | DRF + JWT + React</p></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="section-padding" style="background: rgba(0,0,0,0.25);">
-  <div class="container"><div class="text-center mb-5"><h2 class="section-title" style="display: inline-block;">Let's Connect</h2></div><div class="row justify-content-center"><div class="col-md-10"><div class="glass-card p-4 text-center"><div class="row g-3 mt-2"><div class="col-md-3 col-6"><a href="https://www.linkedin.com/in/aditya-sase-397774324" target="_blank" class="social-premium d-block"><i class="fab fa-linkedin-in fa-2x text-primary"></i><p>LinkedIn</p></a></div><div class="col-md-3 col-6"><a href="https://github.com/as2121" target="_blank" class="social-premium d-block"><i class="fab fa-github fa-2x"></i><p>GitHub</p></a></div><div class="col-md-3 col-6"><a href="https://wa.me/919604735635" target="_blank" class="social-premium d-block"><i class="fab fa-whatsapp fa-2x text-success"></i><p>WhatsApp</p></a></div><div class="col-md-3 col-6"><a href="https://www.instagram.com/aditya.0915__" target="_blank" class="social-premium d-block"><i class="fab fa-instagram fa-2x" style="background: linear-gradient(45deg, #f09433, #d62976, #962fbf); -webkit-background-clip: text; background-clip: text; color: transparent;"></i><p>Instagram</p></a></div></div></div></div></div></div>
+  <div class="container">
+    <div class="text-center mb-5"><h2 class="section-title" style="display: inline-block;">Let's Connect</h2></div>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="glass-card p-4 text-center">
+          <div class="row g-3 mt-2">
+            <div class="col-md-3 col-6"><a href="https://www.linkedin.com/in/aditya-sase-397774324" target="_blank" class="social-premium d-block"><i class="fab fa-linkedin-in fa-2x text-primary"></i><p class="mt-2">LinkedIn</p></a></div>
+            <div class="col-md-3 col-6"><a href="https://github.com/adityasase" target="_blank" class="social-premium d-block"><i class="fab fa-github fa-2x"></i><p>GitHub</p></a></div>
+            <div class="col-md-3 col-6"><a href="https://wa.me/919604735635" target="_blank" class="social-premium d-block"><i class="fab fa-whatsapp fa-2x text-success"></i><p>WhatsApp</p></a></div>
+            <div class="col-md-3 col-6"><a href="https://www.instagram.com/aditya.0915__" target="_blank" class="social-premium d-block"><i class="fab fa-instagram fa-2x" style="background: linear-gradient(45deg, #f09433, #d62976, #962fbf); -webkit-background-clip: text; background-clip: text; color: transparent;"></i><p>Instagram</p></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="py-4" style="background: #03030b; border-top: 1px solid rgba(59,130,246,0.2);"><div class="container text-center"><p class="small opacity-75">© 2026 Aditya Sase | Premium Portfolio</p></div></footer>
+<footer class="py-4 mt-4" style="background: #03030b; border-top: 1px solid rgba(59,130,246,0.2);">
+  <div class="container text-center">
+    <p class="small opacity-75 mb-0">© 2026 Aditya Madhukar Sase | Premium Portfolio</p>
+  </div>
+</footer>
+
 <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-<!-- RESUME MODAL (POPUP with View & Download) -->
+<!-- RESUME MODAL (View & Download) -->
 <div class="modal fade resume-modal" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title fs-2 fw-bold" id="resumeModalLabel" style="background: linear-gradient(120deg,#fff,#60a5fa); -webkit-background-clip:text; background-clip:text; color:transparent;">📄 Aditya Sase</h5>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="resumeModalLabel" style="background: linear-gradient(90deg,#60a5fa,#c084fc); -webkit-background-clip:text; background-clip:text; color:transparent;">Aditya Sase - Resume</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body pt-0">
-        <div class="resume-content-inner">
-          <div class="text-center mb-4"><p class="badge bg-primary bg-opacity-25 px-3 py-2">Fullstack Python Developer</p></div>
-          <div class="resume-section"><h5>👤 Professional Summary</h5><p>Python backend developer with 6 months internship building production REST APIs (Django, DRF) for logistics. Expertise in JWT, RBAC, OTP workflows, and Django ORM.</p></div>
-          <div class="resume-section"><h5>🛠️ Core Skills</h5><div class="resume-skills-grid"><span class="resume-badge">Python</span><span class="resume-badge">Django</span><span class="resume-badge">DRF</span><span class="resume-badge">MySQL</span><span class="resume-badge">JWT/RBAC</span><span class="resume-badge">React.js</span><span class="resume-badge">Git</span></div></div>
-          <div class="resume-section"><h5>💼 Experience</h5><p><strong>Python Developer Intern</strong> @ Prygma Information Systems (Nov 2025 – Apr 2026)<br>- REST APIs, DRF, JWT authentication, RBAC for logistics roles.<br>- Shipment tracking, OTP verification, payment modules.</p></div>
-          <div class="resume-section"><h5>🎓 Education</h5><p>📌 MCS (SPPU) 2024–2026<br>📌 BCS (SPPU) CGPA 7.22<br>📌 HSC 84.33%</p></div>
-          <div class="resume-section"><h5>🏆 Certifications</h5><p>Full Stack Python Training (6 months) – Adhyayan IT, Pune.<br>Django REST Framework Specialization.</p></div>
-          <div class="resume-section"><h5>📫 Contact</h5><p>Email: saseaditya0915@gmail.com | Pune, India | +91 9604735635</p></div>
+      <div class="modal-body resume-content">
+        <div class="text-center mb-3">
+          <h2 class="fw-bold">Aditya Madhukar Sase</h2>
+          <p class="text-primary">Fullstack Python Developer | +91 9604735635 | saseaditya0915@gmail.com</p>
         </div>
+        <div class="resume-section-title">Professional Summary</div>
+        <p class="resume-text">Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF. Expertise in JWT, RBAC, MySQL, and full-stack integration.</p>
+        
+        <div class="resume-section-title">Technical Skills</div>
+        <div><span class="skill-badge-resume">Python</span> <span class="skill-badge-resume">Django/DRF</span> <span class="skill-badge-resume">REST APIs</span> <span class="skill-badge-resume">JWT</span> <span class="skill-badge-resume">MySQL</span> <span class="skill-badge-resume">Git</span> <span class="skill-badge-resume">React.js</span></div>
+        
+        <div class="resume-section-title">Experience</div>
+        <div><strong>Python Developer Intern</strong> @ Prygma Information Systems LLP (Nov 2025 - Apr 2026)<br>
+        - Built REST APIs with DRF, implemented JWT & RBAC, integrated OTP & payment workflows.</div>
+        
+        <div class="resume-section-title">Projects</div>
+        <div><strong>Loan Finance App:</strong> Django, MySQL, EMI automation.<br>
+        <strong>TempoLogi:</strong> Logistics API with escrow payments & React frontend.<br>
+        <strong>Attendance System:</strong> OpenCV + Django real-time tracking.</div>
+        
+        <div class="resume-section-title">Education</div>
+        <div>MCS (SPPU) 2024-2026 | BCS (SPPU) CGPA 7.22 | HSC 84.33%</div>
+        <div class="resume-section-title">Certifications</div>
+        <div>Full Stack Python Training - Adhyayan IT (6 Months) | DRF Specialization</div>
       </div>
-      <div class="modal-footer border-0 justify-content-center gap-3">
-        <button class="btn btn-resume-download text-white px-4 py-2 rounded-pill" id="downloadResumeBtn"><i class="fas fa-download me-2"></i>Download Resume (PDF)</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+      <div class="modal-footer border-top-0">
+        <a href="aditya_sase_mcs.pdf" download class="btn btn-glow"><i class="fas fa-download me-2"></i>Download Resume</a>
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -456,7 +581,7 @@ Here is the complete HTML document with the requested features: a glowing animat
 <script>
   AOS.init({ duration: 800, once: true, offset: 70 });
   
-  // skill bars observer
+  // Skill bars animation
   const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -466,61 +591,61 @@ Here is the complete HTML document with the requested features: a glowing animat
       }
     });
   }, { threshold: 0.3 });
-  const skillCard = document.querySelector('#skills .glass-card');
-  if(skillCard) skillObserver.observe(skillCard);
+  const skillContainer = document.querySelector('#skills .glass-card');
+  if(skillContainer) skillObserver.observe(skillContainer);
   
-  // Navbar scroll + active link with glow
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar-premium');
-    if(window.scrollY > 30) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-    const backBtn = document.getElementById('backToTop');
-    if(window.scrollY > 500) backBtn.classList.add('visible'); else backBtn.classList.remove('visible');
-    
-    // Active link highlight on scroll
-    let sections = document.querySelectorAll('section');
+  // Navbar Auto Highlight on Scroll + Click Smooth Scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link-custom');
+  
+  function updateActiveNav() {
     let scrollPos = window.scrollY + 150;
-    sections.forEach(sec => {
-      if(scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight){
-        let id = sec.getAttribute('id');
-        document.querySelectorAll('.nav-link-custom').forEach(link => {
-          link.classList.remove('active');
-          if(link.getAttribute('href') === '#'+id) link.classList.add('active');
-        });
+    let currentId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if(scrollPos >= sectionTop && scrollPos < sectionBottom) {
+        currentId = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('data-nav') === currentId) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', () => {
+    updateActiveNav();
+    const navbar = document.querySelector('.navbar-premium');
+    if(window.scrollY > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+    const backBtn = document.getElementById('backToTop');
+    if(window.scrollY > 500) backBtn.classList.add('visible');
+    else backBtn.classList.remove('visible');
+  });
+  
+  // Smooth scroll on navbar click
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('data-nav');
+      const targetSection = document.getElementById(targetId);
+      if(targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
   
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e){
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+  // back to top click
+  document.getElementById('backToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
   });
   
-  // Download PDF simulation (creates downloadable resume text or actual PDF)
-  document.getElementById('downloadResumeBtn')?.addEventListener('click', function() {
-    const resumeContent = `
-      ADITYA MADHUKAR SASE
-      Python Backend Developer
-      Email: saseaditya0915@gmail.com | Phone: +91 9604735635
-      ---------------------------------------------------------
-      PROFESSIONAL SUMMARY: Python backend developer with 6 months internship...
-      SKILLS: Python, Django, DRF, MySQL, JWT, RBAC, React.js
-      EXPERIENCE: Python Developer Intern at Prygma Information Systems (2025-2026)
-      EDUCATION: MCS (SPPU), BCS (SPPU) CGPA 7.22
-    `;
-    const blob = new Blob([resumeContent], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Aditya_Sase_Resume.pdf';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+  // initial active
+  updateActiveNav();
 </script>
 </body>
 </html>
