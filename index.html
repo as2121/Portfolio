@@ -1,20 +1,19 @@
-Here is a complete, advanced HTML document that creates a visually stunning portfolio page with premium animations, lighting effects, and dynamic elements, based on your latest resume information.
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Aditya Sase | Fullstack Python Developer | Premium Portfolio</title>
+  <title>Aditya Sase | Fullstack Python Developer | Premium Dynamic Portfolio</title>
   
   <!-- Google Fonts + Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Bootstrap 5 (minimal grid + utilities) -->
+  <!-- Bootstrap 5 (Grid + Utilities) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <!-- AOS -->
+  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <style>
@@ -26,119 +25,121 @@ Here is a complete, advanced HTML document that creates a visually stunning port
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #05050F;
+      background: #0a0a1a;
       color: #F0F3FA;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    /* GLOW & LIGHTING EFFECTS */
-    .glow-text {
-      text-shadow: 0 0 12px rgba(96, 165, 250, 0.6), 0 0 25px rgba(96, 165, 250, 0.3);
-    }
-    
-    .neon-border {
-      position: relative;
-      border: 1px solid rgba(96, 165, 250, 0.2);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.5);
-    }
-    
-    .neon-border:hover {
-      border-color: #60a5fa;
-      box-shadow: 0 0 18px rgba(96, 165, 250, 0.4), 0 25px 40px -12px black;
-      transform: translateY(-6px);
-    }
-    
-    /* Animated Gradient Background */
-    .bg-animated {
-      background: radial-gradient(circle at 10% 20%, #0a0a1a, #010105);
-      position: relative;
-    }
-    
-    .bg-animated::before {
-      content: "";
+    /* ========== DYNAMIC ANIMATED BACKGROUND (LIGHTING & MOVEMENT) ========== */
+    .dynamic-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.08) 0%, transparent 60%);
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #0a0f2a, #03030f);
+    }
+    .dynamic-bg::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle at 30% 40%, rgba(59,130,246,0.18), transparent 55%),
+                  radial-gradient(circle at 80% 70%, rgba(168,85,247,0.15), transparent 60%);
+      animation: slowDrift 24s infinite alternate ease-in-out;
       pointer-events: none;
-      z-index: 0;
+    }
+    @keyframes slowDrift {
+      0% { transform: translate(0%, 0%) scale(1); opacity: 0.6; }
+      100% { transform: translate(4%, 6%) scale(1.2); opacity: 1; }
     }
     
-    /* custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
+    /* floating light particles */
+    .light-particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: radial-gradient(2px 2px at 10% 30%, rgba(96,165,250,0.5) 1px, transparent 1px),
+                        radial-gradient(3px 3px at 85% 65%, rgba(139,92,246,0.5) 1px, transparent 1px);
+      background-size: 55px 55px, 80px 80px;
+      animation: particleFloat 18s linear infinite;
+      opacity: 0.5;
     }
-    ::-webkit-scrollbar-track {
-      background: #0f0f1f;
+    @keyframes particleFloat {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 80px 80px, 120px 120px; }
     }
-    ::-webkit-scrollbar-thumb {
-      background: #3b82f6;
-      border-radius: 12px;
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f0f1f; }
+    ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 12px; }
+    
+    /* ========== GLASS & CARDS (NEVER MERGE) ========== */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 32px;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.4);
+    }
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: #60a5fa;
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(96,165,250,0.3);
+      background: rgba(20, 30, 55, 0.8);
     }
     
-    /* Navbar premium */
+    /* Navbar Premium */
     .navbar-premium {
-      background: rgba(5, 5, 15, 0.85);
+      background: rgba(5, 5, 18, 0.85);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(59,130,246,0.2);
+      border-bottom: 1px solid rgba(59,130,246,0.3);
       transition: all 0.3s;
     }
     .navbar-premium.scrolled {
-      background: rgba(5, 5, 15, 0.96);
-      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-      border-bottom-color: rgba(59,130,246,0.4);
+      background: rgba(2, 2, 12, 0.96);
+      box-shadow: 0 8px 25px -8px rgba(0,0,0,0.6);
+      border-bottom-color: #3b82f6;
     }
     .nav-link-custom {
       font-weight: 500;
       color: #cfddf5;
       transition: 0.2s;
       position: relative;
-      margin: 0 0.2rem;
+      margin: 0 0.3rem;
     }
     .nav-link-custom:hover, .nav-link-custom.active {
-      color: #fff;
-      text-shadow: 0 0 5px #3b82f6;
+      color: white;
+      text-shadow: 0 0 6px #3b82f6;
     }
     .nav-link-custom::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -6px;
       left: 0;
       width: 0%;
       height: 2px;
-      background: linear-gradient(90deg, #60a5fa, #a855f7);
+      background: linear-gradient(90deg, #60a5fa, #c084fc);
       transition: 0.3s;
-      border-radius: 2px;
     }
-    .nav-link-custom:hover::after, .nav-link-custom.active::after {
-      width: 100%;
-    }
+    .nav-link-custom:hover::after, .nav-link-custom.active::after { width: 100%; }
     
-    /* Hero section */
+    /* Hero & Animations */
     .hero-section {
       min-height: 100vh;
       display: flex;
       align-items: center;
       position: relative;
-      overflow: hidden;
-    }
-    .floating-shape {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(59,130,246,0.2), transparent);
-      filter: blur(70px);
-      border-radius: 50%;
-      animation: floatBlob 14s infinite alternate;
-      z-index: 0;
-    }
-    @keyframes floatBlob {
-      0% { transform: translate(-10%, -10%) scale(1); opacity: 0.3; }
-      100% { transform: translate(10%, 15%) scale(1.4); opacity: 0.7; }
     }
     .hero-title {
       font-size: 3.8rem;
@@ -148,92 +149,64 @@ Here is a complete, advanced HTML document that creates a visually stunning port
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: shine 5s linear infinite;
+      animation: shine 6s linear infinite;
     }
     @keyframes shine {
       0% { background-position: 0% 50%; }
       100% { background-position: 200% 50%; }
     }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(96,165,250,0.15);
-      backdrop-filter: blur(8px);
-      border-radius: 80px;
-      padding: 0.3rem 1rem;
-      font-weight: 500;
-      border-left: 2px solid #3b82f6;
-    }
-    .profile-img-wrapper {
-      position: relative;
-    }
     .profile-img-wrapper img {
       width: 320px;
       height: 320px;
       object-fit: cover;
-      border-radius: 35% 65% 70% 30% / 35% 40% 60% 65%;
-      box-shadow: 0 30px 40px -15px rgba(0,0,0,0.6), 0 0 0 3px rgba(96,165,250,0.2);
-      transition: 0.5s;
-      animation: morph 8s ease-in-out infinite;
+      border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+      box-shadow: 0 25px 40px -12px black, 0 0 0 3px rgba(96,165,250,0.3);
+      animation: morphing 9s ease-in-out infinite;
     }
-    @keyframes morph {
-      0% { border-radius: 35% 65% 70% 30% / 35% 40% 60% 65%; }
-      50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-      100% { border-radius: 35% 65% 70% 30% / 35% 40% 60% 65%; }
+    @keyframes morphing {
+      0% { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
+      50% { border-radius: 55% 45% 48% 52% / 48% 55% 45% 52%; }
+      100% { border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; }
     }
     .btn-glow {
       background: linear-gradient(95deg, #1e293b, #0f172a);
-      border: 1px solid rgba(96,165,250,0.5);
-      padding: 12px 28px;
-      border-radius: 40px;
+      border: 1px solid rgba(96,165,250,0.6);
+      padding: 12px 32px;
+      border-radius: 50px;
       font-weight: 600;
       transition: 0.3s;
       color: white;
     }
     .btn-glow:hover {
       background: linear-gradient(95deg, #2563eb, #4f46e5);
-      box-shadow: 0 0 20px #3b82f6;
+      box-shadow: 0 0 18px #3b82f6;
       transform: translateY(-3px);
       border-color: transparent;
     }
     
-    /* Section Headers */
+    /* Section Spacing & Title */
     .section-padding {
-      padding: 100px 0;
+      padding: 110px 0 100px;
     }
     .section-title {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       font-weight: 800;
       margin-bottom: 3rem;
-      position: relative;
       display: inline-block;
+      position: relative;
     }
     .section-title::after {
       content: '';
       position: absolute;
       bottom: -12px;
       left: 0;
-      width: 65%;
+      width: 70%;
       height: 3px;
       background: linear-gradient(90deg, #3b82f6, #a855f7);
       border-radius: 3px;
     }
     
-    /* Experience / Project Cards */
-    .glass-card {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(96,165,250,0.2);
-      border-radius: 32px;
-      transition: all 0.4s;
-      height: 100%;
-      padding: 1.8rem;
-    }
-    .glass-card:hover {
-      transform: translateY(-10px);
-      border-color: #60a5fa;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.2);
-      background: rgba(20, 30, 55, 0.7);
-    }
+    /* Skill bar */
     .skill-bar-bg {
       background: #1e293b;
       border-radius: 40px;
@@ -250,24 +223,25 @@ Here is a complete, advanced HTML document that creates a visually stunning port
     .tech-tag {
       background: rgba(59,130,246,0.2);
       border-radius: 40px;
-      padding: 5px 14px;
+      padding: 5px 16px;
       font-size: 0.75rem;
       font-weight: 500;
       display: inline-block;
       margin: 4px;
       backdrop-filter: blur(4px);
-      border: 0.5px solid rgba(96,165,250,0.3);
+      border: 0.5px solid rgba(96,165,250,0.4);
     }
     
-    /* timeline education */
+    /* TIMELINE (EDUCATION) WITH DISTINCT SEPARATION */
     .timeline-modern {
       position: relative;
-      padding-left: 30px;
+      padding-left: 28px;
+      margin-top: 1rem;
     }
     .timeline-modern::before {
       content: '';
       position: absolute;
-      left: 8px;
+      left: 9px;
       top: 20px;
       bottom: 20px;
       width: 2px;
@@ -275,20 +249,28 @@ Here is a complete, advanced HTML document that creates a visually stunning port
     }
     .timeline-dot-modern {
       position: absolute;
-      left: -18px;
-      top: 20px;
+      left: -19px;
+      top: 22px;
       width: 16px;
       height: 16px;
       background: #3b82f6;
       border-radius: 50%;
-      box-shadow: 0 0 8px #60a5fa;
+      box-shadow: 0 0 12px #60a5fa;
       border: 2px solid white;
     }
+    .edu-item {
+      margin-bottom: 2rem;
+    }
     
-    /* Contact Grid */
+    /* Project spacing */
+    .project-card {
+      height: 100%;
+    }
+    
+    /* Contact social cards */
     .social-premium {
       background: rgba(12, 20, 35, 0.7);
-      border-radius: 28px;
+      border-radius: 24px;
       transition: all 0.25s;
       border: 1px solid rgba(59,130,246,0.2);
       text-align: center;
@@ -296,13 +278,10 @@ Here is a complete, advanced HTML document that creates a visually stunning port
     }
     .social-premium:hover {
       transform: scale(1.02);
-      background: rgba(59,130,246,0.15);
+      background: rgba(59,130,246,0.2);
       border-color: #3b82f6;
     }
-    .footer-custom {
-      border-top: 1px solid rgba(96,165,250,0.15);
-      background: #03030b;
-    }
+    
     .back-to-top {
       position: fixed;
       bottom: 2rem;
@@ -317,27 +296,36 @@ Here is a complete, advanced HTML document that creates a visually stunning port
       z-index: 99;
       opacity: 0;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(37,99,235,0.3);
+      box-shadow: 0 5px 15px rgba(37,99,235,0.4);
       color: white;
     }
-    .back-to-top.visible {
-      opacity: 1;
+    .back-to-top.visible { opacity: 1; }
+    
+    hr.divider-light {
+      background: rgba(96,165,250,0.2);
+      height: 1px;
+      margin: 2rem 0;
     }
     
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
+      .hero-title { font-size: 2.4rem; }
       .section-title { font-size: 2rem; }
       .profile-img-wrapper img { width: 240px; height: 240px; }
+      .section-padding { padding: 70px 0; }
     }
   </style>
 </head>
-<body class="bg-animated">
+<body>
+
+<!-- LAYERED ANIMATED BACKGROUND (LIGHT & MOTION) -->
+<div class="dynamic-bg"></div>
+<div class="light-particles"></div>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-premium py-3" id="navbar">
   <div class="container">
     <a class="navbar-brand fw-bold fs-3" href="#" style="background: linear-gradient(120deg,#fff,#60a5fa); -webkit-background-clip:text; background-clip:text; color:transparent;">ADITYA SASE</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="background: #1e293b; border: none;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="background:#1e293b; border:none;">
       <i class="fas fa-bars text-white"></i>
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
@@ -346,6 +334,7 @@ Here is a complete, advanced HTML document that creates a visually stunning port
         <li class="nav-item"><a class="nav-link nav-link-custom" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link nav-link-custom" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link nav-link-custom" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link nav-link-custom" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link nav-link-custom" href="#contact">Connect</a></li>
       </ul>
@@ -353,22 +342,18 @@ Here is a complete, advanced HTML document that creates a visually stunning port
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO SECTION -->
 <section id="home" class="hero-section">
-  <div class="floating-shape" style="top: -5%; left: -5%;"></div>
-  <div class="floating-shape" style="bottom: -10%; right: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(168,85,247,0.2), transparent);"></div>
-  <div class="container position-relative">
+  <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right" data-aos-duration="1000">
-        <div class="hero-badge mb-3"><i class="fa-regular fa-star-of-life"></i> Fullstack Python Dev</div>
+        <div class="d-inline-block mb-3 px-3 py-1 rounded-pill" style="background: rgba(59,130,246,0.15); backdrop-filter: blur(6px);"><i class="fa-regular fa-star-of-life text-primary me-1"></i> Fullstack Python Developer</div>
         <h1 class="hero-title">Aditya Sase</h1>
-        <div class="fs-3 fw-medium mb-3 d-flex align-items-center gap-2 flex-wrap">
-          <span class="glow-text"><i class="fa-brands fa-python"></i> Python Backend Engineer</span>
-        </div>
-        <p class="text-light-emphasis mb-4 opacity-75">Building robust REST APIs, scalable Django backends, and seamless integrations. 6+ months of production-grade internship experience with JWT, RBAC, OTP workflows.</p>
+        <div class="fs-3 fw-medium mb-3"><span class="glow-text" style="text-shadow: 0 0 10px #3b82f6;">Python Backend Engineer</span></div>
+        <p class="opacity-75 mb-4">Production-grade REST APIs • Django • DRF • JWT • RBAC • 6 months internship building logistics platform with multiple user roles. Passionate about scalable backend architecture.</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="#contact" class="btn btn-glow"><i class="fas fa-paper-plane me-2"></i>Hire Me</a>
-          <a href="aditya_sase_resume.pdf" download class="btn btn-outline-light rounded-pill px-4 py-2 border-glow"><i class="fas fa-download me-1"></i> Resume</a>
+          <a href="#contact" class="btn btn-glow"><i class="fas fa-paper-plane me-2"></i>Collaborate</a>
+          <a href="aditya_sase_resume.pdf" download class="btn btn-outline-light rounded-pill px-4 py-2"><i class="fas fa-download me-1"></i> Resume</a>
         </div>
       </div>
       <div class="col-lg-6 order-lg-2 order-1 text-center" data-aos="fade-left" data-aos-duration="1000">
@@ -380,15 +365,16 @@ Here is a complete, advanced HTML document that creates a visually stunning port
   </div>
 </section>
 
-<!-- About -->
+<!-- ABOUT SECTION (CLEAR SEPARATION) -->
 <section id="about" class="section-padding">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10" data-aos="fade-up">
         <h2 class="section-title">About Me</h2>
         <div class="glass-card p-4 p-md-5">
-          <p class="lead fw-light">Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for logistics platforms serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows. Works across the full Django stack — MySQL, Django ORM, and React.js integration.</p>
-          <div class="row mt-4">
+          <p class="lead fw-light">Python backend developer with 6 months of internship experience building production REST APIs using Django and DRF for a logistics platform serving multiple user roles. Shipped JWT authentication, RBAC, OTP verification workflows. Works across the full Django stack — MySQL, Django ORM, and React.js integration. Passionate about writing clean, scalable backend code and continuously expanding expertise in modern Python development practices.</p>
+          <hr class="divider-light">
+          <div class="row mt-3">
             <div class="col-md-6"><i class="fas fa-map-marker-alt text-primary me-2"></i> Pune, Maharashtra</div>
             <div class="col-md-6"><i class="fas fa-envelope text-primary me-2"></i> saseaditya0915@gmail.com</div>
             <div class="col-md-6 mt-2"><i class="fab fa-linkedin text-primary me-2"></i> linkedin.com/in/aditya-sase</div>
@@ -400,116 +386,170 @@ Here is a complete, advanced HTML document that creates a visually stunning port
   </div>
 </section>
 
-<!-- Experience -->
-<section id="experience" class="section-padding" style="background: rgba(0,0,0,0.3);">
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience" class="section-padding" style="background: rgba(0,0,0,0.2);">
   <div class="container">
-    <div data-aos="fade-up"><h2 class="section-title">Professional Experience</h2></div>
+    <div data-aos="fade-up"><h2 class="section-title">Work Experience</h2></div>
     <div class="row g-4">
       <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100">
-        <div class="glass-card">
+        <div class="glass-card p-4">
           <div class="d-flex flex-wrap justify-content-between align-items-start">
-            <div><h3 class="fw-bold">Python Developer Intern</h3><p class="text-primary">Prygma Information Systems LLP, Ahilyanagar</p></div>
-            <span class="badge bg-dark px-3 py-2">Nov 2025 – Apr 2026 | 6 Months</span>
+            <div><h3 class="fw-bold">Python Developer Intern</h3><p class="text-primary mb-1">Prygma Information Systems LLP, Ahilyanagar</p></div>
+            <span class="badge bg-dark px-3 py-2 rounded-pill">Nov 2025 – Apr 2026 | 6 Months</span>
           </div>
           <ul class="mt-3 list-unstyled">
             <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Developed and maintained REST APIs using Django REST Framework for logistics operations.</li>
             <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Implemented JWT authentication and RBAC for multiple user roles (shipper, carrier, admin).</li>
             <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Worked on shipment tracking, OTP verification, and payment workflow modules.</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Tested APIs using Postman and collaborated in Agile environment.</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Tested APIs using Postman and collaborated in Agile development environment.</li>
           </ul>
-          <div class="d-flex flex-wrap gap-1 mt-2"><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span><span class="tech-tag">Postman</span></div>
+          <div class="d-flex flex-wrap gap-1 mt-2"><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span><span class="tech-tag">Postman</span><span class="tech-tag">REST APIs</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Skills + Education Merge -->
+<!-- SKILLS SECTION (standalone) -->
 <section id="skills" class="section-padding">
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-6" data-aos="fade-right">
-        <h2 class="section-title">Technical Arsenal</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="glass-card p-4">
-          <!-- skills list from resume -->
-          <div><span class="fw-bold">Languages</span><div class="mt-2"><span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">JavaScript</span></div></div>
-          <div class="mt-3"><span class="fw-bold">Backend</span><div class="mt-2"><span class="tech-tag">Django</span><span class="tech-tag">DRF</span><span class="tech-tag">REST APIs</span><span class="tech-tag">JWT/RBAC</span></div></div>
-          <div class="mt-3"><span class="fw-bold">Frontend & Tools</span><div class="mt-2"><span class="tech-tag">React.js</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">Git/GitHub</span><span class="tech-tag">Postman</span><span class="tech-tag">PythonAnywhere</span></div></div>
-          <div class="mt-3"><span class="fw-bold">Data & ML</span><div class="mt-2"><span class="tech-tag">NumPy</span><span class="tech-tag">Pandas</span><span class="tech-tag">Matplotlib</span><span class="tech-tag">Scikit-learn</span></div></div>
-          <hr class="bg-secondary">
-          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Django & DRF</span><span>85%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="85"></div></div></div>
-          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Python Core</span><span>90%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="90"></div></div></div>
-          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>MySQL/PostgreSQL</span><span>80%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="80"></div></div></div>
-          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>React.js Integration</span><span>70%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="70"></div></div></div>
+          <div class="mb-3"><span class="fw-bold fs-6">Languages & Frameworks</span>
+            <div class="mt-2"><span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Django</span><span class="tech-tag">DRF</span></div>
+          </div>
+          <div class="mb-3"><span class="fw-bold">Backend & Auth</span><div class="mt-2"><span class="tech-tag">JWT</span><span class="tech-tag">RBAC</span><span class="tech-tag">RESTful APIs</span><span class="tech-tag">Django ORM</span></div></div>
+          <div class="mb-3"><span class="fw-bold">Frontend & Tools</span><div class="mt-2"><span class="tech-tag">React.js</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">Git/GitHub</span><span class="tech-tag">Postman</span></div></div>
+          <div class="mb-3"><span class="fw-bold">Data & ML</span><div class="mt-2"><span class="tech-tag">NumPy</span><span class="tech-tag">Pandas</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">Matplotlib</span></div></div>
+          <hr class="divider-light">
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Django / DRF</span><span>88%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="88"></div></div></div>
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>Python (Core/Adv)</span><span>90%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="90"></div></div></div>
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>MySQL / SQLite</span><span>82%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="82"></div></div></div>
+          <div class="skill-item mt-3"><div class="d-flex justify-content-between"><span>React Integration</span><span>72%</span></div><div class="skill-bar-bg mt-1"><div class="skill-progress-fill" data-width="72"></div></div></div>
         </div>
       </div>
+      <!-- ADDITIONAL CERTIFICATIONS / SOFT SKILLS -->
       <div class="col-lg-6" data-aos="fade-left">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline-modern">
-          <div class="position-relative mb-4"><div class="timeline-dot-modern"></div><div class="glass-card p-3 ms-4"><h5>Master of Computer Science (MCS)</h5><p class="mb-0">SPPU University — Mamasaheb Mohol College, Pune | 2024 – 2026</p></div></div>
-          <div class="position-relative mb-4"><div class="timeline-dot-modern"></div><div class="glass-card p-3 ms-4"><h5>Bachelor of Computer Science (BCS)</h5><p class="mb-0">SPPU University — CGPA: 7.22/10 | 2021 – 2024</p></div></div>
-          <div class="position-relative mb-4"><div class="timeline-dot-modern"></div><div class="glass-card p-3 ms-4"><h5>Higher Secondary Certificate (HSC)</h5><p class="mb-0">84.33% | New Arts Commerce & Science College</p></div></div>
-          <div class="position-relative"><div class="timeline-dot-modern"></div><div class="glass-card p-3 ms-4"><h5>Full Stack Python Certification</h5><p>Adhyayan IT Training, Pune | 6 Months (Aug 2024 - Feb 2025)</p></div></div>
+        <h2 class="section-title">Certifications</h2>
+        <div class="glass-card p-4">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <i class="fas fa-certificate fa-2x text-primary"></i>
+            <div><strong>Full Stack Python Training</strong><br>Adhyayan IT Training & Placement, Pune | Aug 2024 - Feb 2025 (6 Months)</div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <i class="fas fa-laptop-code fa-2x text-primary"></i>
+            <div><strong>Django REST Framework Specialization</strong><br>Hands-on project: TempoLogi (Logistics Platform)</div>
+          </div>
+          <hr class="divider-light">
+          <div><i class="fas fa-trophy text-warning me-2"></i> Problem Solving & API Design certified by internal bootcamp</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section-padding" style="background: rgba(0,0,0,0.2);">
+<!-- EDUCATION SECTION - FULLY SEPARATE FROM SKILLS, NO MERGE -->
+<section id="education" class="section-padding" style="background: rgba(0,0,0,0.2);">
   <div class="container">
-    <div data-aos="fade-up"><h2 class="section-title">Flagship Projects</h2></div>
+    <div data-aos="fade-up"><h2 class="section-title">Education Timeline</h2></div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card p-4 p-md-5">
+          <div class="timeline-modern">
+            <div class="edu-item position-relative">
+              <div class="timeline-dot-modern"></div>
+              <div class="ms-4">
+                <h4 class="fw-bold">Master of Computer Science (MCS)</h4>
+                <p class="text-primary mb-1">Savitribai Phule Pune University — Mamasaheb Mohol College, Pune</p>
+                <p class="mb-0">2024 – 2026 (Pursuing) · Advanced coursework in distributed systems & AI</p>
+              </div>
+            </div>
+            <div class="edu-item position-relative">
+              <div class="timeline-dot-modern"></div>
+              <div class="ms-4">
+                <h4 class="fw-bold">Bachelor of Computer Science (BCS)</h4>
+                <p class="text-primary mb-1">SPPU University — Pemraj Sarda College, Ahilyanagar</p>
+                <p class="mb-0">2021 – 2024 | CGPA: 7.22/10 · Specialized in Python, DBMS, Web Technologies</p>
+              </div>
+            </div>
+            <div class="edu-item position-relative">
+              <div class="timeline-dot-modern"></div>
+              <div class="ms-4">
+                <h4 class="fw-bold">Higher Secondary Certificate (HSC)</h4>
+                <p class="text-primary mb-1">New Arts Commerce & Science College, Ahilyanagar</p>
+                <p class="mb-0">2020 – 2021 | Percentage: 84.33%</p>
+              </div>
+            </div>
+            <div class="edu-item position-relative">
+              <div class="timeline-dot-modern"></div>
+              <div class="ms-4">
+                <h4 class="fw-bold">Secondary School Certificate (SSC)</h4>
+                <p class="text-primary mb-1">Maharashtra State Board | 80.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="section-padding">
+  <div class="container">
+    <div data-aos="fade-up"><h2 class="section-title">Featured Projects</h2></div>
     <div class="row g-4">
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-        <div class="glass-card h-100">
-          <i class="fas fa-chart-line fs-1 text-primary mb-3"></i>
-          <h3 class="fw-bold">Loan Finance Web App</h3>
-          <p>Secure loan management system with workflow automation, real-time EMI calculation, automated loan disbursement and role-based access. Built with Django, MySQL, Bootstrap.</p>
-          <div class="mt-2"><span class="tech-tag">Django</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaScript</span></div>
-          <a href="https://adi0915.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-glow mt-3">Live Demo <i class="fas fa-arrow-right ms-1"></i></a>
+      <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="glass-card project-card p-4">
+          <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
+          <h3 class="fw-bold fs-4">Loan Finance Web App</h3>
+          <p>Automated loan management with EMI calculation, role-based workflows, and Django ORM. Deployed on PythonAnywhere.</p>
+          <div class="my-2"><span class="tech-tag">Django</span><span class="tech-tag">MySQL</span><span class="tech-tag">Bootstrap</span></div>
+          <a href="https://adi0915.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-glow mt-2">Live Demo →</a>
         </div>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-        <div class="glass-card h-100">
-          <i class="fas fa-truck-fast fs-1 text-primary mb-3"></i>
-          <h3 class="fw-bold">TempoLogi – Logistics Platform</h3>
-          <p>Full-stack logistics API: load posting, bidding, escrow payments, OTP delivery verification. JWT auth + RBAC for carriers/shippers. React frontend integrated.</p>
-          <div class="mt-2"><span class="tech-tag">DRF</span><span class="tech-tag">React.js</span><span class="tech-tag">JWT</span><span class="tech-tag">MySQL</span></div>
-          <button class="btn btn-sm btn-glow mt-3" disabled><i class="fab fa-github"></i> Code (Private)</button>
+      <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="glass-card project-card p-4">
+          <i class="fas fa-truck-fast fa-2x text-primary mb-3"></i>
+          <h3 class="fw-bold fs-4">TempoLogi Logistics Platform</h3>
+          <p>Full-featured logistics API with JWT, RBAC, escrow payments, OTP delivery verification. React frontend integrated.</p>
+          <div class="my-2"><span class="tech-tag">DRF</span><span class="tech-tag">React.js</span><span class="tech-tag">JWT</span></div>
+          <button class="btn btn-sm btn-glow mt-2" disabled><i class="fab fa-github"></i> Private Repo</button>
         </div>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
-        <div class="glass-card h-100">
-          <i class="fas fa-user-check fs-1 text-primary mb-3"></i>
-          <h3 class="fw-bold">Student Attendance (Facial Recognition)</h3>
-          <p>Multi-role attendance system with OpenCV facial recognition, Excel report export, automated alerts. Django + SQLite + OpenCV.</p>
-          <div class="mt-2"><span class="tech-tag">OpenCV</span><span class="tech-tag">Django</span><span class="tech-tag">Pandas</span></div>
-          <a href="https://asattendance.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-glow mt-3">Live Demo</a>
+      <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="glass-card project-card p-4">
+          <i class="fas fa-user-check fa-2x text-primary mb-3"></i>
+          <h3 class="fw-bold fs-4">Student Attendance (Facial Recognition)</h3>
+          <p>OpenCV + Django based attendance with real-time detection, automated reports & alerts.</p>
+          <div class="my-2"><span class="tech-tag">OpenCV</span><span class="tech-tag">Django</span><span class="tech-tag">SQLite</span></div>
+          <a href="https://asattendance.pythonanywhere.com/" target="_blank" class="btn btn-sm btn-glow mt-2">Live Demo</a>
         </div>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
-        <div class="glass-card h-100">
-          <i class="fas fa-shield-alt fs-1 text-primary mb-3"></i>
-          <h3 class="fw-bold">RBAC + OTP Auth Module</h3>
-          <p>Generic authentication microservice built with Django, DRF, JWT, OTP via email. Reusable for fintech / logistics.</p>
-          <div class="mt-2"><span class="tech-tag">Django</span><span class="tech-tag">Redis</span><span class="tech-tag">SMTP</span></div>
+      <div class="col-md-6 col-lg-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="glass-card project-card p-4">
+          <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+          <h3 class="fw-bold fs-4">RBAC + OTP Auth Service</h3>
+          <p>Reusable authentication microservice using Django, DRF, JWT and OTP via email/SMS simulation.</p>
+          <div class="my-2"><span class="tech-tag">Django</span><span class="tech-tag">Redis</span><span class="tech-tag">SMTP</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact Section modern -->
-<section id="contact" class="section-padding">
+<!-- CONTACT SECTION -->
+<section id="contact" class="section-padding" style="background: rgba(0,0,0,0.25);">
   <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up"><h2 class="section-title" style="display: inline-block;">Let's Collaborate</h2></div>
+    <div class="text-center mb-5" data-aos="fade-up"><h2 class="section-title" style="display: inline-block;">Let's Connect</h2></div>
     <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
       <div class="col-md-10">
         <div class="glass-card p-4 text-center">
-          <p class="mb-4 fs-5">I'm open for backend developer roles, freelance projects, or innovative collaborations.</p>
+          <p class="mb-4 fs-5">Open to backend developer roles, freelance projects, or tech collaborations.</p>
           <div class="row g-3 mt-2">
-            <div class="col-md-3 col-6"><a href="https://www.linkedin.com/in/aditya-sase-397774324" target="_blank" class="social-premium d-block text-decoration-none text-white"><i class="fab fa-linkedin-in fa-2x text-primary"></i><p class="mt-2 mb-0">LinkedIn</p></a></div>
+            <div class="col-md-3 col-6"><a href="https://www.linkedin.com/in/aditya-sase-397774324" target="_blank" class="social-premium d-block text-decoration-none text-white"><i class="fab fa-linkedin-in fa-2x text-primary"></i><p class="mt-2 mb-0 fw-semibold">LinkedIn</p></a></div>
             <div class="col-md-3 col-6"><a href="https://github.com/adityasase" target="_blank" class="social-premium d-block text-decoration-none text-white"><i class="fab fa-github fa-2x"></i><p class="mt-2 mb-0">GitHub</p></a></div>
             <div class="col-md-3 col-6"><a href="https://wa.me/919604735635" target="_blank" class="social-premium d-block text-decoration-none text-white"><i class="fab fa-whatsapp fa-2x text-success"></i><p class="mt-2 mb-0">WhatsApp</p></a></div>
             <div class="col-md-3 col-6"><a href="mailto:saseaditya0915@gmail.com" class="social-premium d-block text-decoration-none text-white"><i class="fas fa-envelope fa-2x text-info"></i><p class="mt-2 mb-0">Email</p></a></div>
@@ -520,9 +560,9 @@ Here is a complete, advanced HTML document that creates a visually stunning port
   </div>
 </section>
 
-<footer class="footer-custom py-4 mt-5">
+<footer class="py-4 mt-4" style="background: #03030b; border-top: 1px solid rgba(59,130,246,0.2);">
   <div class="container text-center">
-    <p class="small opacity-75 mb-0">© 2025 Aditya Madhukar Sase — Built with <i class="fas fa-heart text-danger"></i> & advanced lighting effects</p>
+    <p class="small opacity-75 mb-0">© 2025 Aditya Madhukar Sase — Advanced Lighting & Dynamic Portfolio | Built with <i class="fas fa-heart text-danger"></i> & premium animations</p>
   </div>
 </footer>
 
@@ -531,49 +571,34 @@ Here is a complete, advanced HTML document that creates a visually stunning port
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true, offset: 80 });
+  AOS.init({ duration: 800, once: true, offset: 70 });
   
-  // skill bar observer
-  const observerSkills = new IntersectionObserver((entries) => {
+  // skill bar trigger
+  const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         const fills = entry.target.querySelectorAll('.skill-progress-fill');
         fills.forEach(fill => {
-          const width = fill.getAttribute('data-width');
-          if(width) fill.style.width = width + '%';
+          const w = fill.getAttribute('data-width');
+          if(w) fill.style.width = w + '%';
         });
-        observerSkills.unobserve(entry.target);
+        skillObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.3 });
-  const skillContainer = document.querySelector('#skills .glass-card');
-  if(skillContainer) observerSkills.observe(skillContainer);
+  const skillCard = document.querySelector('#skills .glass-card');
+  if(skillCard) skillObserver.observe(skillCard);
   
-  // navbar scroll + active links
+  // navbar scroll & back to top
   window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar-premium');
-    if(window.scrollY > 20) navbar.classList.add('scrolled');
+    if(window.scrollY > 30) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
-    
     const backBtn = document.getElementById('backToTop');
     if(window.scrollY > 500) backBtn.classList.add('visible');
     else backBtn.classList.remove('visible');
-    
-    // active link highlight
-    let sections = document.querySelectorAll('section');
-    let scrollPos = window.scrollY + 150;
-    sections.forEach(sec => {
-      if(scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight){
-        let id = sec.getAttribute('id');
-        document.querySelectorAll('.nav-link-custom').forEach(link => {
-          link.classList.remove('active');
-          if(link.getAttribute('href') === '#'+id) link.classList.add('active');
-        });
-      }
-    });
   });
   
-  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e){
       e.preventDefault();
